@@ -1,0 +1,5 @@
+joblib==1.4.2
+keras==3.7.0
+numpy==2.2.1
+opencv_python==4.10.0.84
+streamlit==1.41.1
