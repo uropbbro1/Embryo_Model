@@ -17,9 +17,9 @@
       ]
     }
   },
-  "updateContentCommand": "[ -f packages.txt ] && sudo apt update && RUN apt-get install ffmpeg libsm6 libxext6  -y && sudo apt upgrade -y && sudo xargs apt install -y <packages.txt; [ -f requirements.txt ] && apt-get install -y libglib2.0-0 && pip3 install --user -r requirements.txt; pip3 install --user streamlit; echo '✅ Packages installed and Requirements met'",
+  "updateContentCommand": "[ -f packages.txt ] && sudo apt update && sudo apt-get install ffmpeg libsm6 libxext6  -y && sudo apt upgrade -y && sudo xargs apt install -y <packages.txt; [ -f requirements.txt ] && apt-get install -y libglib2.0-0 && pip3 install --user -r requirements.txt; pip3 install --user streamlit; echo '✅ Packages installed and Requirements met'",
   "postAttachCommand": {
-    "server": "streamlit run app.py --server.enableCORS false --server.enableXsrfProtection false"
+    "server": "streamlit run app.py"
   },
   "portsAttributes": {
     "8501": {
