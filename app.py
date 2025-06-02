@@ -6,14 +6,12 @@ import numpy as np
 import tempfile
 import keras
 
-# 1. Define model
 def load_model():
     model = keras.models.load_model('model.h5')
     return model
 
 model = load_model()
 
-# 2. Image Preprocessing
 def preprocess_image(image):
     img = cv2.imread(image.name)
     gray_image = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -22,11 +20,8 @@ def preprocess_image(image):
     return gray_image/255
 
 
-# 3. Prediction Logic
 def predict_embryo_quality(image):
     preprocessed_image = preprocess_image(image)
-
-    # Assign class names based on the index.
     p_class = model.predict(np.array([preprocessed_image]))
     print(p_class)
     p_class_items = p_class.tolist()
